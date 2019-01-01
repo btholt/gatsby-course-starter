@@ -9,6 +9,8 @@
 
 ## Get Started
 
+1. clone this repo `git clone git@github.com:btholt/gatsby-course-starter.git`
+1. `cd gatsby-course-starter`
 1. `npm install --global gatsby-cli` - make sure you're on Gatsby v2+
    - See [docs here](https://next.gatsbyjs.org/docs/) if you need help
 1. `gatsby new course-website https://github.com/btholt/gatsby-course-starter`
