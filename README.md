@@ -37,8 +37,8 @@ This site is ready to deployed to GitHub Pages out of the box with GitHub Action
 
 If you do want to deploy this to GitHub Pages with GitHub Actions, you need to do a few things.
 
-1. Create a [personal access token](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) with rights to read and write to repos.
-1. Put that token in your repos secrets. Click the Settings tab and paste your access token in the Secrets tab with the key `ACCESS_TOKEN`.
+1. Make sure you're using the `main` branch as your default, not `master`.
+1. Under settings in your repo, under the Actions tab, make sure your repo allows Actions to run, either from anybody or just you. Also make sure that under Workflow Permissions that `GITHUB_TOKEN` has access to Read and Write permissions. These are both set by default so no action here needed if this is a new repo and you haven't changed anything.
 1. Now once you commit your code, it should automatically deploy your GitHub Pages site should deploy automatically!
 
 ## Example Sites
