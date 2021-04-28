@@ -22,5 +22,7 @@ const x = 2 + 2;
 - This another link to [Brian Holt's Twitter](https://twitter.com/holtbt).
 - Here's another link to a [site built with this starter][containers].
 
+> This is emphasized information.
+
 [fem]: https://www.frontendmasters.com
 [containers]: https://btholt.github.io/complete-intro-to-containers/
