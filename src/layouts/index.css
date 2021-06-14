@@ -1,21 +1,26 @@
-.gradient {
-  background: rgb(96, 108, 136);
-  background: linear-gradient(
-    to bottom,
-    rgb(96, 108, 136) 0%,
-    rgb(63, 76, 107) 100%
-  );
+@import url(./variables.css);
+
+body {
+  font-family: "Open Sans";
+  background: linear-gradient(90deg, var(--bg-main) 15px, transparent 1%) center,
+    linear-gradient(var(--bg-main) 15px, transparent 1%) center, var(--bg-dots);
+  background-size: 16px 16px;
+}
+
+a {
+  /* color: var(--text-links); */
 }
 
 .navbar {
   border-bottom: 1px solid #ccc;
-  position: sticky;
+  position: fixed;
   width: 100%;
   top: 0;
   z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--bg-main);
 }
 
 .navbar h1 {
@@ -23,6 +28,7 @@
   margin: inherit;
   padding: inherit;
   font-weight: bold;
+  color: var(--text-main);
 }
 
 .navbar h2 {
@@ -30,39 +36,157 @@
   margin: inherit;
   padding: inherit;
   text-transform: uppercase;
-  color: white;
 }
 
-.jumbotron.gradient {
-  color: white;
-  text-transform: uppercase;
+.jumbotron {
+  padding: 0;
+}
+
+.jumbotron .courseInfo,
+.jumbotron .courseIcon {
+  padding: 20px;
+}
+
+.jumbotron .courseInfo,
+.jumbotron .courseIcon {
+  text-align: center;
+}
+
+.author {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 1000px) {
+  .jumbotron {
+    display: flex;
+    width: 100%;
+    min-height: 45vh;
+  }
+  .jumbotron .courseInfo,
+  .jumbotron .courseIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .jumbotron .courseInfo {
+    width: 65%;
+    text-align: right;
+  }
+  .jumbotron .courseIcon {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .author {
+    justify-content: flex-end;
+  }
+  .jumbotron .courseInfo-inner {
+    max-width: 85%;
+  }
+}
+
+.jumbotron h1,
+.jumbotron h2 {
+  color: var(--text-main-headers);
+}
+
+.jumbotron h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.jumbotron .courseInfo {
+  background: var(--primary);
+}
+
+.jumbotron .courseIcon {
+  background: var(--secondary);
+}
+
+.jumbotron .courseIcon img {
+  max-width: 180px;
+}
+
+.author .info {
+  padding: 10px;
+}
+
+.author .name {
+  font-size: 18px;
   font-weight: bold;
+  color: var(--text-main-headers);
+}
+
+.author .company {
+  color: var(--text-main-headers);
+  font-size: 16px;
+}
+
+.author .image {
+  border-radius: 75px;
+  overflow: hidden;
+  height: 75px;
+  width: 75px;
 }
 
 .navbar-brand.navbar-brand {
   text-transform: uppercase;
-  color: white;
   font-weight: bold;
+  color: var(--text-main-headers);
 }
 
-.navbar-brand.navbar-brand:hover {
-  color: #777;
+.lesson-section-title {
+  color: var(--text-main-headers);
 }
 
-.navbar-brand.navbar-brand:focus {
-  color: white;
+.lesson-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 45px auto;
+  padding: 10px 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--bg-lesson);
+  border-radius: 5px;
+  margin-top: 40px;
 }
 
 .lesson {
   margin: 15px;
   padding: 15px;
-  background-color: #fff;
   border-radius: 8px;
-  overflow: scroll;
+}
+
+.lesson > h1 {
+  color: var(--text-header);
+  font-size: 24px;
+}
+
+.lesson h2 {
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.lesson h2::after {
+  content: "";
+  display: block;
+  height: 3px;
+  margin-top: 5px;
+  background: var(--text-header);
+  max-width: 300px;
 }
 
 .lesson p {
   clear: both;
+}
+
+.lesson p,
+.lesson li {
+  line-height: 180%;
 }
 
 .lesson-links {
@@ -79,40 +203,11 @@
 }
 
 .lesson-title {
-  color: white;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-.klipse-result {
-  border: 1px solid #90b4fe;
-  padding-top: 8px;
-  position: relative;
-  width: 100%;
-}
-
-.klipse-result .CodeMirror-wrap {
-  width: 100%;
-  border-color: transparent;
-}
-
-.klipse-result::before {
-  content: "result";
-  background-color: white;
-  position: absolute;
-  top: -13px;
-  height: 13px;
-}
-
-.language-htm,
-.language-css,
-.language-js,
-.language-json {
-  width: 100%;
-}
-
 .gatsby-highlight {
-  /* border: 1px solid black; */
   padding: 4px;
   border-radius: 4px;
   display: flex;
@@ -121,32 +216,214 @@
   align-items: stretch;
 }
 
-.CodeMirror-wrap {
-  width: 100%;
-  font-size: 12px;
-  height: inherit;
-  margin-bottom: 12px;
+.lesson-content td {
+  border: 1px solid black;
+  padding: 8px;
 }
 
-.CodeMirror-gutters {
-  height: inherit !important;
+.lesson-content td input {
+  min-width: 300px;
 }
 
-.klipse-snippet > .CodeMirror {
-  border: none;
-  width: 100%;
+.lesson-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.gatsby-highlight > .klipse-snippet {
-  border: 1px solid #90b4fe;
+.random-tweet {
   width: 100%;
-  border-right: none;
-  position: relative;
-  margin-bottom: 15px;
+  margin-top: 100px;
 }
 
-.doggos {
-  width: 100%;
-  border: 1px solid #666;
+.fem-link {
+  text-align: center;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding-top: 50px;
+}
+
+blockquote {
+  padding: 15px;
+  background-color: var(--emphasized-bg);
+  border: 2px solid var(--emphasized-border);
   border-radius: 5px;
+}
+
+blockquote > *:last-child {
+  margin-bottom: 0;
+}
+
+.lesson-content img {
+  max-width: 100%;
+}
+
+.main-card {
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.lesson-title {
+  font-size: 20px;
+  padding: 15px 30px;
+}
+
+.lesson-content {
+  line-height: 1.5;
+}
+
+.lesson-text {
+  width: 100%;
+  padding: 25px 5px 25px 35px;
+  min-height: 200px;
+}
+
+.sections-name {
+  margin: 0;
+  padding: 0;
+}
+
+ol.sections-name {
+  counter-reset: my-awesome-counter;
+  list-style: none;
+  padding-left: 40px;
+  width: 98%;
+  margin: 0;
+  padding: 0;
+}
+
+ol.sections-name > li {
+  counter-increment: my-awesome-counter;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+  width: 100%;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+ol.sections-name .lesson-preface {
+  /* content: counter(my-awesome-counter); */
+  color: var(--icons);
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: #93aca7;
+  font-size: 30px;
+  padding: 25px;
+  width: 30%;
+}
+
+.lesson-preface .fas {
+  font-size: 60px;
+}
+
+ol.sections-name .lesson-preface::before {
+  content: counter(my-awesome-counter);
+  position: absolute;
+  top: 0;
+  left: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--icons);
+}
+
+ol.sections-name .lesson-details {
+  display: flex;
+  flex-basis: 100%;
+  flex: 1;
+  background: var(--bg-lesson);
+  min-width: 600px;
+  position: relative;
+}
+
+.details-bg {
+  --corner-fill: var(--corner-inactive);
+  transition: fill 0.25s;
+  width: 10%;
+  height: 0;
+  padding-bottom: 10%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.details-bg > svg {
+  width: 100%;
+  height: auto;
+}
+
+.details-bg > svg path {
+  transition: fill 0.25s;
+}
+
+.lesson-details:hover .details-bg,
+.lesson-container .details-bg {
+  --corner-fill: var(--corner-active);
+}
+
+@media (min-width: 1000px) {
+  ol.sections-name > li::before {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+  ol.sections-name .lesson-details {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+}
+
+.lesson-details h3 {
+  font-size: 22px;
+  border-bottom: 1px solid var(--less);
+  padding-bottom: 10px;
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.lesson-links {
+  margin-top: 45px;
+  margin-bottom: 80px;
+}
+
+.lesson-links a {
+  border-radius: 10px;
+  background: var(--nav-buttons);
+  color: var(--nav-buttons-text);
+  padding: 15px 20px;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lesson-links a.prev {
+  padding-left: 10px;
+}
+
+.lesson-links a.next {
+  padding-right: 10px;
+}
+
+.lesson-links a:hover {
+  background: #152837;
+  text-decoration: none;
+}
+
+.lesson-links .arrow {
+  font-size: 24px;
+  line-height: 24px;
+  padding: 0px 5px;
 }

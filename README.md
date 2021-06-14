@@ -21,11 +21,21 @@ The crux of this site is are the lessons. Provided are two examples. Each lesson
 - `title` - will be the title displayed on the Table of Contents and on the page itself
 - `order` - the order of which the item should appear in the table of contents. should in `<number><capital letter>` format where the number corresponds to the section it's and the letter corresponds to the order of the lesson inside the section, e.g. `3B`
 - `section` - the title of the section that the article is in. Only the first lesson for each section will be used.
-- `description` – a one-to-three sentence summary of the lesson. used for the meta tag for social shares and SEO. if no description is given, the `siteMetadata.description` for the site is used
+
+On _just the first_ lesson of every section
+
+- `description` – a one-to-three sentence summary of the lesson. used for the meta tag for social shares and SEO. if no description is given, the `siteMetadata.description` for the site is used.
+- `icon` - the Font Awesome icon you want for the home page of the site
 
 ## Config
 
 Inside of `gatsby-config.js` be sure to fill out the `siteMetadata` fields, including `title`, `subtitle`, `description`, and `keywords`.
+
+For the social links, you can leave them as empty strings if you want to omit them.
+
+## Themes
+
+All the variables for theme are in the variables.css file. You can also change the Prism.js theme.
 
 ## GitHub Pages
 
@@ -44,10 +54,7 @@ If you do want to deploy this to GitHub Pages with GitHub Actions, you need to d
 ## Example Sites
 
 - [This repo itself](https://btholt.github.io/gatsby-course-starter/)
-- [Complete Intro to Containers](https://btholt.github.io/complete-intro-to-containers/)
-- [Complete Intro to React v5](https://btholt.github.io/complete-intro-to-react-v5/)
-- [Complete Intro to Web Dev v2](https://btholt.github.io/intro-to-web-dev-v2/)
-- [Four Semesters of Computer Science in Five Hours Part II](https://btholt.github.io/four-semesters-of-cs-part-two/)
+- [Complete Intro to Computer Science](https://btholt.github.io/complete-intro-to-computer-science/)
 
 ## CSV
 

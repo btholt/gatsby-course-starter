@@ -4,6 +4,7 @@ title: "Introduction"
 order: "1A"
 section: "The First Section"
 description: "this is the description that will show up in social shares"
+icon: "dumpster-fire"
 ---
 
 This is page one.
