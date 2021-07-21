@@ -21,6 +21,7 @@ a {
   justify-content: space-between;
   align-items: center;
   background-color: var(--bg-main);
+  padding: 10px;
 }
 
 .navbar h1 {
