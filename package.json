@@ -20,7 +20,7 @@
     "gatsby-remark-images": "^5.10.0",
     "gatsby-remark-prismjs": "^5.10.0",
     "gatsby-source-filesystem": "^3.13.0",
-    "gatsby-transformer-remark": "^4.10.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "is-url-superb": "^5.0.0",
     "parse-markdown-links": "^1.0.4",
     "prismjs": "^1.24.1",
